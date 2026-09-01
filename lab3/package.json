@@ -1,0 +1,16 @@
+{
+  "name": "lab3",
+  "version": "1.0.0",
+  "description": "- 127.0.0.1: IP address\r    - ctrl+c to stop the server\r    - every request from client has a pair of {request,response}\r # npm: node package manager\r    ## used to install , run, uninstall any program/project and package\r    - npm install <packageName>\r    - npm uninstall <packageName>\r    - to use npm project must be npm project, to create npm project we can use: npm init -y, it creates a package.json file automatically \r    - package.json holds all the information related to install packages from npm\r    - it also creates a folder node_modules automatically\r    - node_modules holds the package/library files\r    - generally we ignore the node_modules by .gitignore",
+  "main": "prg1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
