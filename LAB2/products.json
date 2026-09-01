@@ -1,0 +1,27 @@
+[
+  {
+    "name": "mobile",
+    "id": 201,
+    "price": 23000,
+    "qty": 2
+  },
+  {
+    "name": "laptop",
+    "id": 201,
+    "price": 45000,
+    "qty": 3
+  },
+  {
+    "name": "headphones",
+    "id": 401,
+    "price": 3000,
+    "qty": 4
+  },
+  {
+    "name": "mobile",
+    "id": 201,
+    "price": 23000,
+    "qty": 1
+  }
+
+]
