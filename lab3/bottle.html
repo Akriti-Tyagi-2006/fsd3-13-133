@@ -1,0 +1,820 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaSync — Smart Water Bottle</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f5fbff;
+            color: #102a43;
+        }
+
+        /* NAVBAR */
+        nav {
+            height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 8%;
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #087ea4;
+        }
+
+        .logo span {
+            color: #16b8a6;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #345;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        nav ul li a:hover {
+            color: #087ea4;
+        }
+
+        .nav-btn {
+            background: #087ea4;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 650px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 70px 9%;
+            background: linear-gradient(135deg, #e7f8ff, #f5ffff);
+        }
+
+        .hero-text {
+            max-width: 560px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #d5f7f2;
+            color: #087c73;
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 62px;
+            line-height: 1.05;
+            margin-bottom: 20px;
+            color: #0b3047;
+        }
+
+        .hero h1 span {
+            color: #0ca6b8;
+        }
+
+        .hero p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #587083;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .primary-btn {
+            padding: 15px 28px;
+            border-radius: 30px;
+            background: #087ea4;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 10px 25px rgba(8, 126, 164, 0.25);
+        }
+
+        .secondary-btn {
+            padding: 14px 27px;
+            border: 2px solid #087ea4;
+            border-radius: 30px;
+            color: #087ea4;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* BOTTLE */
+        .hero-product {
+            width: 390px;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .bottle {
+            width: 180px;
+            height: 400px;
+            border-radius: 55px 55px 45px 45px;
+            background: linear-gradient(90deg, #0a88aa, #5de0e6, #087ea4);
+            box-shadow:
+                inset -15px 0 25px rgba(0,0,0,0.12),
+                0 30px 50px rgba(0, 100, 140, 0.25);
+            position: relative;
+        }
+
+        .bottle::before {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 55px;
+            top: -40px;
+            left: 40px;
+            border-radius: 15px 15px 5px 5px;
+            background: #164e63;
+        }
+
+        .bottle-screen {
+            position: absolute;
+            top: 125px;
+            left: 25px;
+            width: 130px;
+            height: 100px;
+            border-radius: 20px;
+            background: rgba(5, 35, 50, 0.75);
+            color: #7ffcff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+        }
+
+        .bottle-screen strong {
+            font-size: 28px;
+        }
+
+        .bottle-screen small {
+            color: #c8ffff;
+            margin-top: 5px;
+        }
+
+        .floating {
+            position: absolute;
+            background: white;
+            padding: 15px 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            font-weight: bold;
+        }
+
+        .float-one {
+            top: 80px;
+            right: 0;
+        }
+
+        .float-two {
+            bottom: 70px;
+            left: 0;
+        }
+
+        /* STATS */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            background: white;
+            padding: 30px 10%;
+            text-align: center;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.03);
+        }
+
+        .stat h2 {
+            color: #087ea4;
+            font-size: 30px;
+        }
+
+        .stat p {
+            color: #6c7d89;
+            margin-top: 5px;
+        }
+
+        /* FEATURES */
+        .section {
+            padding: 90px 9%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 42px;
+            margin-bottom: 12px;
+        }
+
+        .section-title p {
+            color: #6c7d89;
+            font-size: 17px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .feature {
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 10px 35px rgba(20, 100, 130, 0.08);
+            transition: 0.3s;
+        }
+
+        .feature:hover {
+            transform: translateY(-8px);
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .feature h3 {
+            margin-bottom: 12px;
+            font-size: 21px;
+        }
+
+        .feature p {
+            color: #718391;
+            line-height: 1.6;
+        }
+
+        /* DASHBOARD */
+        .dashboard-section {
+            background: #082f49;
+            color: white;
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .dashboard-text h2 {
+            font-size: 44px;
+            margin-bottom: 20px;
+        }
+
+        .dashboard-text p {
+            color: #b8d2df;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .dashboard-card {
+            background: white;
+            color: #123;
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+        }
+
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 25px;
+        }
+
+        .progress {
+            width: 100%;
+            height: 15px;
+            background: #e6f0f4;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            width: 78%;
+            height: 100%;
+            background: #13b9a8;
+            border-radius: 20px;
+        }
+
+        .water-value {
+            font-size: 40px;
+            color: #087ea4;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .mini-card {
+            background: #f2faff;
+            padding: 18px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .mini-card strong {
+            display: block;
+            font-size: 20px;
+            color: #087ea4;
+        }
+
+        .mini-card small {
+            color: #718391;
+        }
+
+        /* HOW IT WORKS */
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .step {
+            text-align: center;
+        }
+
+        .number {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #d9f8f6;
+            color: #087e78;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 23px;
+            font-weight: bold;
+        }
+
+        .step h3 {
+            margin-bottom: 10px;
+        }
+
+        .step p {
+            color: #718391;
+            line-height: 1.5;
+        }
+
+        /* PRICING */
+        .pricing {
+            background: #eefaff;
+            text-align: center;
+        }
+
+        .price-card {
+            max-width: 430px;
+            margin: auto;
+            background: white;
+            padding: 45px;
+            border-radius: 25px;
+            box-shadow: 0 20px 50px rgba(0,100,140,0.12);
+        }
+
+        .price {
+            font-size: 55px;
+            font-weight: bold;
+            color: #087ea4;
+            margin: 20px 0;
+        }
+
+        .price span {
+            font-size: 18px;
+            color: #7b8b95;
+        }
+
+        .price-card ul {
+            list-style: none;
+            text-align: left;
+            margin: 30px 0;
+        }
+
+        .price-card li {
+            padding: 10px 0;
+            color: #506572;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #061f31;
+            color: white;
+            padding: 50px 9%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer p {
+            color: #9bb5c4;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                gap: 50px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .features,
+            .steps {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 44px;
+            }
+
+            .hero-product {
+                transform: scale(0.8);
+            }
+
+            .features,
+            .steps,
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                gap: 25px;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo">Aqua<span>Sync</span></div>
+
+        <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#technology">Technology</a></li>
+            <li><a href="#how">How It Works</a></li>
+            <li><a href="#buy">Buy</a></li>
+        </ul>
+
+        <a href="#buy" class="nav-btn">Get Yours</a>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="hero-text">
+
+            <div class="badge">💧 SMART HYDRATION, SIMPLIFIED</div>
+
+            <h1>
+                Drink smarter.<br>
+                Live <span>better.</span>
+            </h1>
+
+            <p>
+                AquaSync is a smart water bottle that tracks your hydration,
+                reminds you to drink, and connects with your smartphone to
+                help you build healthier hydration habits.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#buy" class="primary-btn">Buy AquaSync →</a>
+                <a href="#features" class="secondary-btn">Explore Features</a>
+            </div>
+
+        </div>
+
+        <div class="hero-product">
+
+            <div class="floating float-one">
+                🔔 Drink Reminder
+            </div>
+
+            <div class="bottle">
+
+                <div class="bottle-screen">
+                    <strong>78%</strong>
+                    <small>Hydrated</small>
+                </div>
+
+            </div>
+
+            <div class="floating float-two">
+                🌡️ 18°C Water
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- STATS -->
+    <section class="stats">
+
+        <div class="stat">
+            <h2>750 ml</h2>
+            <p>Capacity</p>
+        </div>
+
+        <div class="stat">
+            <h2>24 hrs</h2>
+            <p>Battery Life</p>
+        </div>
+
+        <div class="stat">
+            <h2>IP67</h2>
+            <p>Water Resistant</p>
+        </div>
+
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section" id="features">
+
+        <div class="section-title">
+            <h2>Everything your hydration needs</h2>
+            <p>Smart technology designed around your everyday routine.</p>
+        </div>
+
+        <div class="features">
+
+            <div class="feature">
+                <div class="feature-icon">💧</div>
+                <h3>Hydration Tracking</h3>
+                <p>
+                    Automatically track how much water you drink throughout
+                    the day and see your progress in real time.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🔔</div>
+                <h3>Smart Reminders</h3>
+                <p>
+                    Gentle reminders help you stay hydrated without
+                    interrupting your daily routine.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">📱</div>
+                <h3>Mobile App</h3>
+                <p>
+                    Connect AquaSync to your phone and view your hydration
+                    history, goals, and daily statistics.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🌡️</div>
+                <h3>Temperature Display</h3>
+                <p>
+                    Keep an eye on your water temperature with the built-in
+                    digital display.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🔋</div>
+                <h3>Long Battery</h3>
+                <p>
+                    A powerful rechargeable battery keeps your smart bottle
+                    running throughout your day.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">✨</div>
+                <h3>Self-Cleaning</h3>
+                <p>
+                    UV-C purification technology helps keep your bottle
+                    fresher between washes.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- DASHBOARD -->
+    <section class="section dashboard-section" id="technology">
+
+        <div class="dashboard">
+
+            <div class="dashboard-text">
+
+                <h2>Your hydration. At a glance.</h2>
+
+                <p>
+                    AquaSync learns your drinking habits and gives you a
+                    simple picture of your hydration throughout the day.
+                    Set your personal goal and let AquaSync do the tracking.
+                </p>
+
+                <a href="#buy" class="primary-btn">
+                    Start Your Hydration Journey
+                </a>
+
+            </div>
+
+            <div class="dashboard-card">
+
+                <div class="dashboard-header">
+                    <strong>Today's Hydration</strong>
+                    <span>Tuesday</span>
+                </div>
+
+                <div class="water-value">
+                    1.95 L
+                </div>
+
+                <div class="progress">
+                    <div class="progress-bar"></div>
+                </div>
+
+                <p style="margin-top:10px;color:#718391;">
+                    1.95 L of 2.5 L goal
+                </p>
+
+                <div class="dashboard-grid">
+
+                    <div class="mini-card">
+                        <strong>7</strong>
+                        <small>Drinks</small>
+                    </div>
+
+                    <div class="mini-card">
+                        <strong>82%</strong>
+                        <small>Goal</small>
+                    </div>
+
+                    <div class="mini-card">
+                        <strong>3</strong>
+                        <small>Reminders</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section" id="how">
+
+        <div class="section-title">
+            <h2>How AquaSync works</h2>
+            <p>Three simple steps to smarter hydration.</p>
+        </div>
+
+        <div class="steps">
+
+            <div class="step">
+                <div class="number">1</div>
+                <h3>Fill</h3>
+                <p>
+                    Fill your AquaSync bottle with your favorite drink.
+                </p>
+            </div>
+
+            <div class="step">
+                <div class="number">2</div>
+                <h3>Drink</h3>
+                <p>
+                    Smart sensors automatically measure your hydration.
+                </p>
+            </div>
+
+            <div class="step">
+                <div class="number">3</div>
+                <h3>Improve</h3>
+                <p>
+                    Follow personalized reminders and reach your daily goal.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PRICING -->
+    <section class="section pricing" id="buy">
+
+        <div class="section-title">
+            <h2>Make hydration a habit.</h2>
+            <p>One bottle. Smarter everyday hydration.</p>
+        </div>
+
+        <div class="price-card">
+
+            <h3>AquaSync Smart Bottle</h3>
+
+            <div class="price">
+                ₹1,999 <span>one-time</span>
+            </div>
+
+            <ul>
+                <li>✓ 750 ml premium bottle</li>
+                <li>✓ Hydration tracking</li>
+                <li>✓ Smart drink reminders</li>
+                <li>✓ Temperature display</li>
+                <li>✓ Bluetooth smartphone sync</li>
+                <li>✓ Rechargeable battery</li>
+                <li>✓ 1-year warranty</li>
+            </ul>
+
+            <a href="#" class="primary-btn">
+                Order Now →
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div>
+            <div class="logo">Aqua<span>Sync</span></div>
+            <p>Hydration, upgraded.</p>
+        </div>
+
+        <p>© 2026 AquaSync. All rights reserved.</p>
+
+    </footer>
+
+</body>
+</html>
+

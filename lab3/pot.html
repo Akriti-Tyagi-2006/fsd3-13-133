@@ -1,0 +1,812 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Mittika | Indigenous Pottery</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Georgia, "Times New Roman", serif;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: #f4ead8;
+        color: #3b261b;
+      }
+
+      /* NAVBAR */
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+
+        height: 75px;
+        padding: 0 8%;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        background: #f8f0e2;
+        border-bottom: 1px solid #d6bea0;
+      }
+
+      .logo {
+        font-size: 28px;
+        font-weight: bold;
+        color: #713d24;
+      }
+
+      .logo span {
+        color: #b06a3c;
+      }
+
+      nav ul {
+        display: flex;
+        gap: 30px;
+        list-style: none;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: #533526;
+        font-size: 16px;
+      }
+
+      nav a:hover {
+        color: #a6532b;
+      }
+
+      .nav-button {
+        background: #783e25;
+        color: white;
+        padding: 11px 20px;
+        border-radius: 4px;
+      }
+
+      /* HERO */
+      .hero {
+        min-height: 650px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 70px 9%;
+
+        background:
+          radial-gradient(circle at 80% 40%, #e4c59e 0%, transparent 30%),
+          #f4ead8;
+      }
+
+      .hero-text {
+        max-width: 570px;
+      }
+
+      .tag {
+        display: inline-block;
+        padding: 8px 15px;
+        margin-bottom: 20px;
+
+        border: 1px solid #a8663e;
+        color: #7a442a;
+
+        font-size: 13px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+
+      .hero h1 {
+        font-size: 64px;
+        line-height: 1.05;
+        margin-bottom: 25px;
+      }
+
+      .hero h1 span {
+        color: #a4512c;
+      }
+
+      .hero p {
+        font-size: 19px;
+        line-height: 1.8;
+        color: #705848;
+        margin-bottom: 30px;
+      }
+
+      .hero-button {
+        display: inline-block;
+
+        padding: 15px 28px;
+
+        background: #783e25;
+        color: white;
+
+        text-decoration: none;
+        font-weight: bold;
+
+        border-radius: 4px;
+      }
+
+      .hero-button:hover {
+        background: #a4512c;
+      }
+
+      /* POT ILLUSTRATION */
+      .pot-area {
+        width: 430px;
+        height: 500px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position: relative;
+      }
+
+      .pot {
+        width: 260px;
+        height: 290px;
+
+        background: repeating-linear-gradient(
+          0deg,
+          #a85e38 0px,
+          #a85e38 8px,
+          #914b2d 9px,
+          #a85e38 13px
+        );
+
+        border-radius: 15% 15% 38% 38%;
+
+        position: relative;
+
+        box-shadow:
+          inset -25px 0 30px rgba(50, 20, 10, 0.18),
+          20px 25px 35px rgba(80, 45, 25, 0.25);
+      }
+
+      .pot::before {
+        content: "";
+
+        position: absolute;
+
+        width: 230px;
+        height: 55px;
+
+        top: -28px;
+        left: 15px;
+
+        background: #783e25;
+
+        border-radius: 50%;
+
+        box-shadow: inset 0 8px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .pot::after {
+        content: "✦  ✧  ✦  ✧  ✦";
+
+        position: absolute;
+
+        top: 95px;
+        left: 30px;
+
+        width: 200px;
+
+        padding: 15px 0;
+
+        text-align: center;
+
+        color: #eacb9f;
+
+        font-size: 22px;
+
+        border-top: 2px solid #d59b68;
+        border-bottom: 2px solid #d59b68;
+      }
+
+      .leaf {
+        position: absolute;
+        font-size: 50px;
+      }
+
+      .leaf-one {
+        top: 40px;
+        right: 10px;
+      }
+
+      .leaf-two {
+        bottom: 45px;
+        left: 0;
+      }
+
+      /* INTRO */
+      .intro {
+        padding: 70px 9%;
+        text-align: center;
+        background: #ead8bc;
+      }
+
+      .intro h2 {
+        font-size: 38px;
+        margin-bottom: 20px;
+      }
+
+      .intro p {
+        max-width: 750px;
+        margin: auto;
+
+        line-height: 1.8;
+        font-size: 17px;
+        color: #675143;
+      }
+
+      /* PRODUCTS */
+      .section {
+        padding: 90px 9%;
+      }
+
+      .section-heading {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .section-heading h2 {
+        font-size: 42px;
+        margin-bottom: 10px;
+      }
+
+      .section-heading p {
+        color: #765c49;
+      }
+
+      .products {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+      }
+
+      .product {
+        background: #f9f1e4;
+        border: 1px solid #d8c1a4;
+        border-radius: 6px;
+        overflow: hidden;
+
+        transition: 0.3s;
+      }
+
+      .product:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 35px rgba(90, 50, 25, 0.12);
+      }
+
+      .product-image {
+        height: 240px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background: #e5cfaf;
+      }
+
+      .mini-pot {
+        width: 120px;
+        height: 130px;
+
+        background: #9e5634;
+
+        border-radius: 20% 20% 40% 40%;
+
+        position: relative;
+
+        box-shadow: 10px 12px 20px rgba(70, 35, 20, 0.25);
+      }
+
+      .mini-pot::before {
+        content: "";
+
+        position: absolute;
+
+        width: 105px;
+        height: 25px;
+
+        top: -12px;
+        left: 8px;
+
+        border-radius: 50%;
+
+        background: #743b25;
+      }
+
+      .pot-two {
+        width: 145px;
+        height: 115px;
+        background: #b56d45;
+      }
+
+      .pot-three {
+        width: 100px;
+        height: 150px;
+        background: #87462e;
+      }
+
+      .product-info {
+        padding: 25px;
+      }
+
+      .product-info h3 {
+        font-size: 23px;
+        margin-bottom: 8px;
+      }
+
+      .product-info p {
+        color: #765c49;
+        line-height: 1.5;
+        margin-bottom: 18px;
+      }
+
+      .price {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .price strong {
+        font-size: 21px;
+        color: #793e26;
+      }
+
+      .buy {
+        padding: 9px 15px;
+
+        background: #793e26;
+        color: white;
+
+        text-decoration: none;
+
+        border-radius: 3px;
+      }
+
+      /* STORY */
+      .story {
+        background: #38241a;
+        color: #f5e8d4;
+
+        padding: 90px 9%;
+      }
+
+      .story-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 70px;
+        align-items: center;
+      }
+
+      .story h2 {
+        font-size: 45px;
+        margin-bottom: 20px;
+      }
+
+      .story p {
+        color: #d8c5ae;
+        line-height: 1.8;
+        margin-bottom: 20px;
+      }
+
+      .story-card {
+        padding: 45px;
+
+        border: 1px solid #8b674e;
+        background: #493125;
+
+        text-align: center;
+      }
+
+      .story-card .symbol {
+        font-size: 65px;
+        margin-bottom: 20px;
+      }
+
+      .story-card h3 {
+        font-size: 25px;
+        margin-bottom: 12px;
+      }
+
+      /* PROCESS */
+      .process {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+      }
+
+      .process-card {
+        text-align: center;
+        padding: 30px 20px;
+      }
+
+      .process-number {
+        width: 55px;
+        height: 55px;
+
+        margin: 0 auto 20px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 50%;
+
+        background: #b46a42;
+        color: white;
+
+        font-weight: bold;
+        font-size: 20px;
+      }
+
+      .process-card h3 {
+        margin-bottom: 10px;
+      }
+
+      .process-card p {
+        color: #765c49;
+        line-height: 1.5;
+      }
+
+      /* CTA */
+      .cta {
+        text-align: center;
+        padding: 100px 9%;
+
+        background:
+          linear-gradient(rgba(111, 57, 33, 0.92), rgba(111, 57, 33, 0.92)),
+          #a45b35;
+
+        color: white;
+      }
+
+      .cta h2 {
+        font-size: 45px;
+        margin-bottom: 15px;
+      }
+
+      .cta p {
+        color: #ead9c5;
+        margin-bottom: 30px;
+        font-size: 18px;
+      }
+
+      .cta-button {
+        display: inline-block;
+
+        background: #f2d3a7;
+        color: #63351f;
+
+        padding: 15px 30px;
+
+        text-decoration: none;
+        font-weight: bold;
+
+        border-radius: 4px;
+      }
+
+      /* FOOTER */
+      footer {
+        background: #241710;
+        color: #e7d5bd;
+
+        padding: 45px 9%;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      footer p {
+        color: #a99078;
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 900px) {
+        .hero {
+          flex-direction: column;
+          text-align: center;
+          gap: 40px;
+        }
+
+        .hero h1 {
+          font-size: 50px;
+        }
+
+        .products {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .story-container {
+          grid-template-columns: 1fr;
+        }
+
+        .process {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        nav ul {
+          display: none;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .hero {
+          padding-top: 50px;
+        }
+
+        .hero h1 {
+          font-size: 42px;
+        }
+
+        .pot-area {
+          transform: scale(0.75);
+        }
+
+        .products,
+        .process {
+          grid-template-columns: 1fr;
+        }
+
+        .section-heading h2,
+        .story h2,
+        .cta h2 {
+          font-size: 34px;
+        }
+
+        footer {
+          flex-direction: column;
+          gap: 15px;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAVIGATION -->
+    <nav>
+      <div class="logo">Mitti<span>ka</span></div>
+
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#collection">Collection</a></li>
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#craft">Craft</a></li>
+      </ul>
+
+      <a href="#collection" class="nav-button"> Shop Pots </a>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-text">
+        <div class="tag">Handcrafted • Indigenous • Earth-made</div>
+
+        <h1>
+          Where <span>Earth</span><br />
+          becomes Art.
+        </h1>
+
+        <p>
+          Discover beautifully handcrafted indigenous pots made from natural
+          clay, traditional techniques and generations of artistic knowledge.
+        </p>
+
+        <a href="#collection" class="hero-button"> Explore the Collection → </a>
+      </div>
+
+      <div class="pot-area">
+        <div class="leaf leaf-one">🌿</div>
+
+        <div class="pot"></div>
+
+        <div class="leaf leaf-two">🍂</div>
+      </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="intro">
+      <h2>More than a pot.</h2>
+
+      <p>
+        Every piece carries the warmth of the earth and the touch of the maker.
+        Our pottery celebrates indigenous craftsmanship while bringing timeless,
+        sustainable design into modern homes.
+      </p>
+    </section>
+
+    <!-- COLLECTION -->
+    <section class="section" id="collection">
+      <div class="section-heading">
+        <h2>The Earth Collection</h2>
+
+        <p>One-of-a-kind pieces shaped by hand.</p>
+      </div>
+
+      <div class="products">
+        <!-- PRODUCT 1 -->
+        <div class="product">
+          <div class="product-image">
+            <div class="mini-pot"></div>
+          </div>
+
+          <div class="product-info">
+            <h3>Terracotta Matka</h3>
+
+            <p>
+              A traditional clay vessel inspired by indigenous water-storage
+              pottery.
+            </p>
+
+            <div class="price">
+              <strong>₹1,499</strong>
+
+              <a href="#" class="buy"> Buy Now </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRODUCT 2 -->
+        <div class="product">
+          <div class="product-image">
+            <div class="mini-pot pot-two"></div>
+          </div>
+
+          <div class="product-info">
+            <h3>Desert Bowl</h3>
+
+            <p>
+              A rustic hand-shaped bowl with natural earthy textures and organic
+              curves.
+            </p>
+
+            <div class="price">
+              <strong>₹899</strong>
+
+              <a href="#" class="buy"> Buy Now </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRODUCT 3 -->
+        <div class="product">
+          <div class="product-image">
+            <div class="mini-pot pot-three"></div>
+          </div>
+
+          <div class="product-info">
+            <h3>Heritage Kalash</h3>
+
+            <p>
+              A traditional decorative vessel inspired by centuries of
+              indigenous pottery forms.
+            </p>
+
+            <div class="price">
+              <strong>₹1,799</strong>
+
+              <a href="#" class="buy"> Buy Now </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STORY -->
+    <section class="story" id="story">
+      <div class="story-container">
+        <div>
+          <h2>Made by hands.<br />Rooted in heritage.</h2>
+
+          <p>
+            Our pots are created using traditional hand-building techniques
+            passed down through generations.
+          </p>
+
+          <p>
+            We work with local artisans and celebrate their knowledge,
+            creativity and connection with the earth.
+          </p>
+
+          <p>
+            No two pots are exactly alike. Small variations in shape, texture
+            and colour are what make each piece uniquely yours.
+          </p>
+        </div>
+
+        <div class="story-card">
+          <div class="symbol">🏺</div>
+
+          <h3>One Earth. Many Stories.</h3>
+
+          <p>
+            From raw clay to finished pottery, every piece represents a
+            connection between people, culture and nature.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CRAFT PROCESS -->
+    <section class="section" id="craft">
+      <div class="section-heading">
+        <h2>The Craft</h2>
+
+        <p>From the earth to your home.</p>
+      </div>
+
+      <div class="process">
+        <div class="process-card">
+          <div class="process-number">01</div>
+
+          <h3>Clay</h3>
+
+          <p>Naturally sourced clay is prepared and refined by hand.</p>
+        </div>
+
+        <div class="process-card">
+          <div class="process-number">02</div>
+
+          <h3>Shape</h3>
+
+          <p>
+            Artisans carefully shape each vessel using traditional techniques.
+          </p>
+        </div>
+
+        <div class="process-card">
+          <div class="process-number">03</div>
+
+          <h3>Fire</h3>
+
+          <p>
+            Each pot is fired to create strength and its distinctive earthy
+            character.
+          </p>
+        </div>
+
+        <div class="process-card">
+          <div class="process-number">04</div>
+
+          <h3>Home</h3>
+
+          <p>The finished piece begins a new story in your space.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="cta">
+      <h2>Bring a piece of the earth home.</h2>
+
+      <p>Choose handmade. Choose heritage. Choose something that lasts.</p>
+
+      <a href="#collection" class="cta-button"> Shop the Collection </a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div>
+        <div class="logo" style="color: #e7d5bd">Mitti<span>ka</span></div>
+
+        <p>Indigenous pottery, thoughtfully made.</p>
+      </div>
+
+      <p>© 2026 Mittika • Crafted with respect for earth & tradition</p>
+    </footer>
+  </body>
+</html>
