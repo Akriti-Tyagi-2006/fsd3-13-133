@@ -1,11 +1,27 @@
 import http from "http";
 const server = http.createServer((req, res) => {
-  if (req.url === "/") {
+  if (req.url === "/" && req.method === "GET") {
     res.statusCode = 200;
     res.end("Get Request");
   } else if (req.url === "/" && req.method === "POST") {
-    res.statusCode = 200;
-    res.end("Post Request");
+    // console.log("Request:", req);
+    let body = ''
+    req.on("data", (chunk) => {
+      body += chunk;
+    })
+    req.on("end", () => {
+      const product=JSON.parse(body);
+      console.log("received product:", product);
+      res.statusCode = 201;
+      res.end(
+        JSON.stringify({
+          message: "Product received",
+          receivedProduct: product,
+        }),
+      );
+      
+    });
+    
   } else if (req.url === "/" && req.method === "PUT") {
     res.statusCode = 200;
     res.end("Put Request");
