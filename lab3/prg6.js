@@ -22,9 +22,24 @@ const server = http.createServer((req, res) => {
       
     });
     
-  } else if (req.url === "/" && req.method === "PUT") {
-    res.statusCode = 200;
-    res.end("Put Request");
+  } else if (req.url.startsWith("/products/") && req.method === "PUT") {
+    const productId = req.url.split("/").pop();
+    console.log("Product ID to update:", productId);
+    let body = ''
+    req.on("data", (chunk) => {
+      body += chunk;
+    })
+    req.on("end", () => {
+      const product=JSON.parse(body);
+      console.log("Product updated:", product);
+      res.statusCode = 201;
+      res.end(
+        JSON.stringify({
+          message: "Product updated",
+          updatedProduct: product,
+        }),
+      );
+    });
   } else if (req.url === "/" && req.method === "DELETE") {
     res.statusCode = 200;
     res.end("Delete Request");
