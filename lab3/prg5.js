@@ -13,7 +13,17 @@ const server = http.createServer((req,res)=>{
         res.setHeader("content-type","text/html");
         
         res.end("<h1>Hello from prg5</h1>");
+    }else if(req.url==="/products"){
+        const products = [
+            {id:1,name:"Laptop"},
+            {id:2,name:"Mobile"}
+        ];
+        res.writeHead(200,{"content-type":"application/json"});
+        res.end(JSON.stringify(products));
+    }else{
+        res.end("<h1>Page Not Found</h1>");
     }
+
 
 });
 server.listen(5000,()=>console.log("prg5 is running"));
