@@ -1,16 +1,24 @@
 import http from "http";
+import { getAllProducts } from "./products.js";
 const server = http.createServer((req, res) => {
-  if (req.url === "/" && req.method === "GET") {
+  if (req.url === "/api/v1/products" && req.method === "GET") {
     res.statusCode = 200;
-    res.end("Get Request");
-  } else if (req.url === "/" && req.method === "POST") {
+    const data = getAllProducts();
+    res.setHeader("Content-Type", "application/json");
+    res.end(
+      JSON.stringify({
+        count: data.length,
+        data,
+      }),
+    );
+  } else if (req.url === "/api/v1/products" && req.method === "POST") {
     // console.log("Request:", req);
-    let body = ''
+    let body = "";
     req.on("data", (chunk) => {
       body += chunk;
-    })
+    });
     req.on("end", () => {
-      const product=JSON.parse(body);
+      const product = JSON.parse(body);
       console.log("received product:", product);
       res.statusCode = 201;
       res.end(
@@ -19,18 +27,16 @@ const server = http.createServer((req, res) => {
           receivedProduct: product,
         }),
       );
-      
     });
-    
   } else if (req.url.startsWith("/products/") && req.method === "PUT") {
     const productId = req.url.split("/").pop();
     console.log("Product ID to update:", productId);
-    let body = ''
+    let body = "";
     req.on("data", (chunk) => {
       body += chunk;
-    })
+    });
     req.on("end", () => {
-      const product=JSON.parse(body);
+      const product = JSON.parse(body);
       console.log("Product updated:", product);
       res.statusCode = 201;
       res.end(
