@@ -1,5 +1,5 @@
 import http from "http";
-import { getAllProducts } from "./products.js";
+import { getAllProducts, addProduct,deleteProduct } from "./products.js";
 const server = http.createServer((req, res) => {
   if (req.url === "/api/v1/products" && req.method === "GET") {
     res.statusCode = 200;
@@ -19,16 +19,17 @@ const server = http.createServer((req, res) => {
     });
     req.on("end", () => {
       const product = JSON.parse(body);
-      console.log("received product:", product);
+      const item=addProduct(product);
+      console.log("added product:", item);
       res.statusCode = 201;
       res.end(
         JSON.stringify({
-          message: "Product received",
-          receivedProduct: product,
+          message: "Product added",
+          addedProduct: item,
         }),
       );
     });
-  } else if (req.url.startsWith("/products/") && req.method === "PUT") {
+  } else if (req.url.startsWith("/api/v1/products/") && req.method === "PUT") {
     const productId = req.url.split("/").pop();
     console.log("Product ID to update:", productId);
     let body = "";
@@ -46,9 +47,17 @@ const server = http.createServer((req, res) => {
         }),
       );
     });
-  } else if (req.url === "/" && req.method === "DELETE") {
-    res.statusCode = 200;
-    res.end("Delete Request");
+  } else if (req.url.startsWith("/api/v1/products/") && req.method === "DELETE") {
+    const pid=req.url.split("/").pop();
+    console.log("Product ID to delete:", pid);
+    const deleted = deleteProduct(parseInt(pid));
+    if (deleted) {
+      res.statusCode = 200;
+      res.end("Product deleted");
+    } else {
+      
+      res.end(JSON.stringify({msg:`product with id ${pid} not found`}));
+    }
   } else {
     res.statusCode = 404;
     res.end("sent with 404 status code");

@@ -74,4 +74,12 @@
 
    7. res.setHeader
    8. 
+### GET:
+   - no parameter will be passed to the server when we receive all items.
+### POST:
+   - to add record we pass the value from body section in JSON format of API tester(ECHO API).
+### DELETE:
+   - to delete any product we pass parameter that is id of the product from url/id. Nothing is passed in the body section.
+### UPDATE:
+   - PUT/PATCH: We pass id from url and data to update from body section of the API tester.
 
