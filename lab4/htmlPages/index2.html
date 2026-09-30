@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus X1 Pro - The Future in Your Palm</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            500: '#10b981',
+                            600: '#059669',
+                            900: '#064e3b',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .text-glow {
+            text-shadow: 0 0 30px rgba(16, 185, 129, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-emerald-500 selection:text-white">
+
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 to-cyan-400 flex items-center justify-center shadow-lg shadow-emerald-500/30">
+                    <i data-lucide="smartphone" class="w-5 h-5 text-slate-950 font-bold"></i>
+                </div>
+                <span class="text-xl font-extrabold tracking-wider bg-gradient-to-r from-white via-slate-200 to-emerald-400 bg-clip-text text-transparent">NEXUS X1</span>
+            </div>
+            
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+                <a href="#overview" class="hover:text-emerald-400 transition-colors">Overview</a>
+                <a href="#features" class="hover:text-emerald-400 transition-colors">Features</a>
+                <a href="#interactive" class="hover:text-emerald-400 transition-colors">Design & Colors</a>
+                <a href="#specs" class="hover:text-emerald-400 transition-colors">Tech Specs</a>
+                <a href="#testimonials" class="hover:text-emerald-400 transition-colors">Reviews</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <a href="#preorder" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-full text-sm font-semibold text-slate-950 bg-gradient-to-r from-emerald-400 to-cyan-400 hover:opacity-90 transition-all shadow-lg shadow-emerald-500/25">
+                    Pre-Order Now
+                </a>
+                <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white focus:outline-none">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#overview" class="block py-2 text-slate-300 hover:text-emerald-400">Overview</a>
+            <a href="#features" class="block py-2 text-slate-300 hover:text-emerald-400">Features</a>
+            <a href="#interactive" class="block py-2 text-slate-300 hover:text-emerald-400">Design & Colors</a>
+            <a href="#specs" class="block py-2 text-slate-300 hover:text-emerald-400">Tech Specs</a>
+            <a href="#testimonials" class="block py-2 text-slate-300 hover:text-emerald-400">Reviews</a>
+            <a href="#preorder" class="block text-center mt-4 py-3 rounded-xl text-sm font-semibold text-slate-950 bg-gradient-to-r from-emerald-400 to-cyan-400">Pre-Order Now</a>
+        </div>
+    </header>
+
+    <section id="overview" class="relative min-h-screen flex items-center justify-center pt-28 pb-20 overflow-hidden">
+        <!-- Background Glows -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-500/15 rounded-full blur-[140px] pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 text-center">
+            <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full glass-card border border-emerald-500/30 text-emerald-400 text-xs sm:text-sm font-semibold mb-6 animate-pulse-slow">
+                <i data-lucide="sparkles" class="w-4 h-4"></i>
+                <span>Introducing Nexus X1 Pro • The Next Generation</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight max-w-4xl mx-auto leading-[1.1] mb-6">
+                Beyond Intelligence. <br>
+                <span class="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent text-glow">Pure Titanium Power.</span>
+            </h1>
+
+            <p class="text-base sm:text-xl text-slate-400 max-w-2xl mx-auto mb-10">
+                Engineered with aerospace-grade titanium, revolutionary quantum-core processor, and an extraordinary 48MP periscope camera system.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+                <a href="#preorder" class="w-full sm:w-auto px-8 py-4 rounded-full text-base font-bold text-slate-950 bg-gradient-to-r from-emerald-400 to-cyan-400 hover:opacity-95 transition-all shadow-xl shadow-emerald-500/30 flex items-center justify-center space-x-2">
+                    <span>Reserve Your Nexus X1</span>
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
+                <a href="#interactive" class="w-full sm:w-auto px-8 py-4 rounded-full text-base font-semibold text-slate-200 glass-card hover:bg-slate-800/80 transition-all flex items-center justify-center space-x-2">
+                    <i data-lucide="eye" class="w-5 h-5 text-emerald-400"></i>
+                    <span>Explore 3D Color View</span>
+                </a>
+            </div>
+
+            <!-- Hero Phone Mockup / Render -->
+            <div class="relative max-w-sm sm:max-w-md mx-auto animate-float">
+                <div class="absolute inset-0 bg-gradient-to-tr from-emerald-500/20 to-cyan-500/20 rounded-[45px] blur-2xl -z-10 transform scale-95"></div>
+                <!-- Phone Frame -->
+                <div id="hero-phone-frame" class="relative bg-slate-900 rounded-[48px] p-3 border-2 border-slate-700 shadow-2xl shadow-emerald-950/50 transition-all duration-500">
+                    <div class="absolute top-5 left-1/2 -translate-x-1/2 w-28 h-5 bg-black rounded-full z-20 flex items-center justify-end px-3 space-x-1.5">
+                        <div class="w-2 h-2 rounded-full bg-emerald-900/80"></div>
+                        <div class="w-2.5 h-2.5 rounded-full bg-slate-950 border border-slate-800"></div>
+                    </div>
+                    <div class="relative bg-slate-950 rounded-[38px] overflow-hidden aspect-[9/19] flex flex-col justify-between p-6 text-left border border-slate-800">
+                        <!-- Screen Header -->
+                        <div class="flex justify-between items-center text-xs text-slate-400 mt-3">
+                            <span class="font-semibold text-white">9:41</span>
+                            <div class="flex items-center space-x-1.5">
+                                <i data-lucide="signal" class="w-3.5 h-3.5"></i>
+                                <i data-lucide="wifi" class="w-3.5 h-3.5"></i>
+                                <i data-lucide="battery" class="w-4 h-4 text-emerald-400"></i>
+                            </div>
+                        </div>
+                        <!-- Screen Content -->
+                        <div class="my-auto space-y-4 text-center">
+                            <div id="screen-wallpaper" class="w-20 h-20 mx-auto rounded-3xl bg-gradient-to-br from-emerald-400 to-cyan-500 flex items-center justify-center shadow-lg shadow-emerald-500/40 transition-colors duration-500">
+                                <i data-lucide="zap" class="w-10 h-10 text-slate-950"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold tracking-tight text-white">Nexus OS 16</h3>
+                            <p class="text-xs text-slate-400">Titanium Series • Quantum Display</p>
+                        </div>
+                        <!-- Widget -->
+                        <div class="bg-slate-900/80 backdrop-blur-md rounded-2xl p-4 border border-slate-800 flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center text-emerald-400">
+                                    <i data-lucide="shield-check" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs font-bold text-white">Neural Engine</div>
+                                    <div class="text-[10px] text-emerald-400">Active • 120 FPS ProMotion</div>
+                                </div>
+                            </div>
+                            <div class="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="border-y border-slate-900 bg-slate-900/40 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="space-y-1">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-white">A19 Pro</div>
+                    <div class="text-xs sm:text-sm text-slate-400 font-medium">Quantum Chipset</div>
+                </div>
+                <div class="space-y-1">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-emerald-400">48MP</div>
+                    <div class="text-xs sm:text-sm text-slate-400 font-medium">Triple Lens Array</div>
+                </div>
+                <div class="space-y-1">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-white">36 hrs</div>
+                    <div class="text-xs sm:text-sm text-slate-400 font-medium">All-Day Battery Life</div>
+                </div>
+                <div class="space-y-1">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-cyan-400">Grade 5</div>
+                    <div class="text-xs sm:text-sm text-slate-400 font-medium">Titanium Chassis</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs sm:text-sm font-bold uppercase tracking-widest text-emerald-400 mb-3">Masterpiece Engineering</h2>
+                <h3 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-4">
+                    Designed to inspire. Built to perform.
+                </h3>
+                <p class="text-slate-400 text-base sm:text-lg">
+                    Every detail of the Nexus X1 Pro has been re-imagined to deliver the pinnacle of mobile technology.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="glass-card rounded-3xl p-8 hover:border-emerald-500/50 transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="camera" class="w-7 h-7"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-3">Studio-Grade Optics</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Capture cinematic masterpieces with the 48MP main sensor, 5x optical zoom periscope, and advanced night-vision AI processing.
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-slate-800 flex items-center text-emerald-400 text-sm font-semibold group-hover:translate-x-1 transition-transform cursor-pointer">
+                        <span>Learn about camera specs</span>
+                        <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="glass-card rounded-3xl p-8 hover:border-emerald-500/50 transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="battery-charging" class="w-7 h-7"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-3">Endurance Redefined</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Power through up to 36 hours of video playback. Hyper-Charge technology juices your phone from 0% to 80% in just 18 minutes.
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-slate-800 flex items-center text-cyan-400 text-sm font-semibold group-hover:translate-x-1 transition-transform cursor-pointer">
+                        <span>Explore battery tech</span>
+                        <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="glass-card rounded-3xl p-8 hover:border-emerald-500/50 transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="cpu" class="w-7 h-7"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-3">Quantum A19 Core</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Unprecedented speeds with 3nm architecture. Handle heavy 3D gaming, machine learning tasks, and multitasking without breaking a sweat.
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-slate-800 flex items-center text-indigo-400 text-sm font-semibold group-hover:translate-x-1 transition-transform cursor-pointer">
+                        <span>Discover processor details</span>
+                        <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="interactive" class="py-24 bg-slate-900/30 border-y border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <h2 class="text-xs sm:text-sm font-bold uppercase tracking-widest text-emerald-400 mb-3">Personalized Elegance</h2>
+                <h3 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-4">
+                    Choose Your Finish
+                </h3>
+                <p class="text-slate-400 text-base">
+                    Select a colorway that matches your style. Crafted from aerospace titanium with a satin matte texture.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Interactive Phone Preview -->
+                <div class="lg:col-span-6 flex justify-center">
+                    <div class="relative w-72 sm:w-80">
+                        <div id="interactive-glow" class="absolute inset-0 bg-emerald-500/20 rounded-[48px] blur-3xl -z-10 transition-all duration-500"></div>
+                        <div id="interactive-device" class="bg-slate-900 rounded-[50px] p-4 border-2 border-slate-700 shadow-2xl transition-all duration-500">
+                            <div class="bg-slate-950 rounded-[38px] overflow-hidden aspect-[9/18] p-6 flex flex-col justify-between text-center relative border border-slate-800">
+                                <div class="absolute top-4 left-1/2 -translate-x-1/2 w-24 h-4 bg-black rounded-full"></div>
+                                <div class="my-auto space-y-3">
+                                    <div id="device-badge" class="w-16 h-16 mx-auto rounded-2xl bg-emerald-500 flex items-center justify-center text-slate-950 font-bold transition-all duration-500 shadow-lg">
+                                        <i data-lucide="smartphone" class="w-8 h-8"></i>
+                                    </div>
+                                    <h4 id="device-color-name" class="text-xl font-bold text-white">Natural Titanium</h4>
+                                    <p class="text-xs text-slate-400">Titanium Grade 5 Body</p>
+                                </div>
+                                <div class="text-[11px] text-slate-500 uppercase tracking-widest">Nexus X1 Pro</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Color Selection Options -->
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="glass-card rounded-3xl p-6 sm:p-8 space-y-6">
+                        <h4 class="text-lg font-bold text-white">Available Editions</h4>
+                        
+                        <div class="space-y-4">
+                            <!-- Option 1: Natural Titanium -->
+                            <button onclick="setColor('Natural Titanium', 'from-slate-400 to-slate-600', 'bg-slate-400', 'rgba(148, 163, 184, 0.3)', this)" class="color-btn w-full flex items-center justify-between p-4 rounded-2xl bg-slate-800/80 border-2 border-emerald-500 transition-all group">
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-8 h-8 rounded-full bg-gradient-to-br from-slate-300 to-slate-500 border border-slate-600 shadow-inner"></div>
+                                    <div class="text-left">
+                                        <div class="text-sm font-bold text-white">Natural Titanium</div>
+                                        <div class="text-xs text-slate-400">Raw aerospace metal finish</div>
+                                    </div>
+                                </div>
+                                <span class="text-xs font-semibold text-emerald-400">Selected</span>
+                            </button>
+
+                            <!-- Option 2: Obsidian Black -->
+                            <button onclick="setColor('Obsidian Black', 'from-slate-800 to-slate-950', 'bg-slate-900', 'rgba(30, 41, 59, 0.5)', this)" class="color-btn w-full flex items-center justify-between p-4 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-slate-700 transition-all group">
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-8 h-8 rounded-full bg-gradient-to-br from-slate-800 to-slate-950 border border-slate-700 shadow-inner"></div>
+                                    <div class="text-left">
+                                        <div class="text-sm font-bold text-white">Obsidian Black</div>
+                                        <div class="text-xs text-slate-400">Deep carbon-infused shade</div>
+                                    </div>
+                                </div>
+                                <span class="text-xs font-semibold text-slate-500 group-hover:text-slate-300">Select</span>
+                            </button>
+
+                            <!-- Option 3: Emerald Frost -->
+                            <button onclick="setColor('Emerald Frost', 'from-emerald-400 to-teal-600', 'bg-emerald-500', 'rgba(16, 185, 129, 0.3)', this)" class="color-btn w-full flex items-center justify-between p-4 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-slate-700 transition-all group">
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-8 h-8 rounded-full bg-gradient-to-br from-emerald-400 to-teal-600 border border-emerald-500 shadow-inner"></div>
+                                    <div class="text-left">
+                                        <div class="text-sm font-bold text-white">Emerald Frost</div>
+                                        <div class="text-xs text-slate-400">Signature limited gradient</div>
+                                    </div>
+                                </div>
+                                <span class="text-xs font-semibold text-slate-500 group-hover:text-slate-300">Select</span>
+                            </button>
+
+                            <!-- Option 4: Desert Gold -->
+                            <button onclick="setColor('Desert Gold', 'from-amber-300 to-yellow-600', 'bg-amber-500', 'rgba(245, 158, 11, 0.3)', this)" class="color-btn w-full flex items-center justify-between p-4 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-slate-700 transition-all group">
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-8 h-8 rounded-full bg-gradient-to-br from-amber-300 to-yellow-600 border border-amber-500 shadow-inner"></div>
+                                    <div class="text-left">
+                                        <div class="text-sm font-bold text-white">Desert Gold</div>
+                                        <div class="text-xs text-slate-400">Warm brushed titanium tone</div>
+                                    </div>
+                                </div>
+                                <span class="text-xs font-semibold text-slate-500 group-hover:text-slate-300">Select</span>
+                            </button>
+                        </div>
+
+                        <div class="pt-4 border-t border-slate-800 text-xs text-slate-400 flex items-center justify-between">
+                            <span>Storage options available:</span>
+                            <span class="text-white font-bold">256GB / 512GB / 1TB</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="specs" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs sm:text-sm font-bold uppercase tracking-widest text-emerald-400 mb-3">Under the Hood</h2>
+                <h3 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-4">
+                    Technical Specifications
+                </h3>
+                <p class="text-slate-400 text-base">
+                    Compare features and specs of the revolutionary Nexus X1 Pro series.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Spec Card 1 -->
+                <div class="glass-card rounded-3xl p-6 space-y-4">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center">
+                        <i data-lucide="monitor" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white">Display</h4>
+                    <ul class="space-y-2 text-sm text-slate-300">
+                        <li class="flex justify-between border-b border-slate-800/60 pb-2"><span class="text-slate-400">Size</span> <span class="font-semibold">6.8" OLED Pro</span></li>
+                        <li class="flex justify-between border-b border-slate-800/60 pb-2"><span class="text-slate-400">Refresh Rate</span> <span class="font-semibold">1-120Hz Adaptive</span></li>
+                        <li class="flex justify-between pb-2"><span class="text-slate-400">Peak Brightness</span> <span class="font-semibold">3000 nits</span></li>
+                    </ul>
+                </div>
+
+                <!-- Spec Card 2 -->
+                <div class="glass-card rounded-3xl p-6 space-y-4">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center">
+                        <i data-lucide="cpu" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white">Performance</h4>
+                    <ul class="space-y-2 text-sm text-slate-300">
+                        <li class="flex justify-between border-b border-slate-800/60 pb-2"><span class="text-slate-400">Processor</span> <span class="font-semibold">Nexus A19 Pro</span></li>
+                        <li class="flex justify-between border-b border-slate-800/60 pb-2"><span class="text-slate-400">Neural Engine</span> <span class="font-semibold">24-Core AI</span></li>
+                        <li class="flex justify-between pb-2"><span class="text-slate-400">Memory (RAM)</span> <span class="font-semibold">16GB LPDDR5X</span></li>
+                    </ul>
+                </div>
+
+                <!-- Spec Card 3 -->
+                <div class="glass-card rounded-3xl p-6 space-y-4">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center">
+                        <i data-lucide="camera" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white">Camera System</h4>
+                    <ul class="space-y-2 text-sm text-slate-300">
+                        <li class="flex justify-between border-b border-slate-800/60 pb-2"><span class="text-slate-400">Main Sensor</span> <span class="font-semibold">48MP Wide</span></li>
+                        <li class="flex justify-between border-b border-slate-800/60 pb-2"><span class="text-slate-400">Periscope Zoom</span> <span class="font-semibold">5x Optical / 25x Digital</span></li>
+                        <li class="flex justify-between pb-2"><span class="text-slate-400">Video</span> <span class="font-semibold">8K Dolby Vision</span></li>
+                    </ul>
+                </div>
+
+                <!-- Spec Card 4 -->
+                <div class="glass-card rounded-3xl p-6 space-y-4">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center">
+                        <i data-lucide="shield" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white">Durability</h4>
+                    <ul class="space-y-2 text-sm text-slate-300">
+                        <li class="flex justify-between border-b border-slate-800/60 pb-2"><span class="text-slate-400">Frame</span> <span class="font-semibold">Grade 5 Titanium</span></li>
+                        <li class="flex justify-between border-b border-slate-800/60 pb-2"><span class="text-slate-400">Glass</span> <span class="font-semibold">Ceramic Shield Gen 3</span></li>
+                        <li class="flex justify-between pb-2"><span class="text-slate-400">Water Resistance</span> <span class="font-semibold">IP68 (6m / 30 mins)</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="py-24 bg-slate-900/30 border-y border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs sm:text-sm font-bold uppercase tracking-widest text-emerald-400 mb-3">Expert Reviews</h2>
+                <h3 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-4">
+                    Loved by Tech Leaders & Creators
+                </h3>
+                <p class="text-slate-400 text-base">
+                    See what industry experts are saying about the revolutionary Nexus X1 Pro.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="glass-card rounded-3xl p-8 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center space-x-1 text-amber-400 mb-6">
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        </div>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            "The camera system on the Nexus X1 Pro is nothing short of breathtaking. The low-light performance rivals dedicated mirrorless cameras."
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-4 pt-4 border-t border-slate-800">
+                        <div class="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-sm">
+                            TC
+                        </div>
+                        <div>
+                            <div class="text-sm font-bold text-white">TechCrunch Review</div>
+                            <div class="text-xs text-slate-400">Senior Hardware Editor</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="glass-card rounded-3xl p-8 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center space-x-1 text-amber-400 mb-6">
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        </div>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            "Titanium build makes it astonishingly lightweight in the hand. Combined with the 36-hour battery, this is my ultimate daily driver."
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-4 pt-4 border-t border-slate-800">
+                        <div class="w-10 h-10 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold text-sm">
+                            MK
+                        </div>
+                        <div>
+                            <div class="text-sm font-bold text-white">Marques K.</div>
+                            <div class="text-xs text-slate-400">Digital Creator & Reviewer</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="glass-card rounded-3xl p-8 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center space-x-1 text-amber-400 mb-6">
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        </div>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            "The quantum processor handles heavy 4K rendering and AI computational workflows effortlessly. Absolutely transformative device."
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-4 pt-4 border-t border-slate-800">
+                        <div class="w-10 h-10 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold text-sm">
+                            SW
+                        </div>
+                        <div>
+                            <div class="text-sm font-bold text-white">Sarah W.</div>
+                            <div class="text-xs text-slate-400">Wired Magazine</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="preorder" class="py-24 relative overflow-hidden">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-[150px] pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs sm:text-sm font-bold uppercase tracking-widest text-emerald-400 mb-3">Secure Yours Today</h2>
+                <h3 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-4">
+                    Pre-Order the Nexus X1 Pro
+                </h3>
+                <p class="text-slate-400 text-base">
+                    Be among the first in the world to experience the future of smartphones. Free priority shipping and exclusive titanium case included.
+                </p>
+            </div>
+
+            <div class="max-w-2xl mx-auto glass-card rounded-[32px] p-8 sm:p-10 border border-slate-800 shadow-2xl">
+                <form id="preorder-form" onsubmit="handlePreorder(event)" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Full Name</label>
+                            <input type="text" required placeholder="Alex Mercer" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3.5 text-white placeholder-slate-600 focus:outline-none focus:border-emerald-500 transition-colors">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Email Address</label>
+                            <input type="email" required placeholder="alex@example.com" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3.5 text-white placeholder-slate-600 focus:outline-none focus:border-emerald-500 transition-colors">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Select Storage</label>
+                            <select class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-emerald-500 transition-colors">
+                                <option>256GB - $999</option>
+                                <option>512GB - $1,199</option>
+                                <option>1TB - $1,399</option>
+                            </select>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Select Edition</label>
+                            <select id="form-color-select" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-emerald-500 transition-colors">
+                                <option>Natural Titanium</option>
+                                <option>Obsidian Black</option>
+                                <option>Emerald Frost</option>
+                                <option>Desert Gold</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="pt-2">
+                        <button type="submit" class="w-full py-4 rounded-xl text-base font-bold text-slate-950 bg-gradient-to-r from-emerald-400 to-cyan-400 hover:opacity-95 transition-all shadow-lg shadow-emerald-500/25 flex items-center justify-center space-x-2">
+                            <i data-lucide="lock" class="w-4 h-4"></i>
+                            <span>Confirm Pre-Order ($50 Deposit)</span>
+                        </button>
+                    </div>
+
+                    <p class="text-center text-xs text-slate-500">
+                        Secure checkout via SSL encryption. Fully refundable anytime before dispatch.
+                    </p>
+                </form>
+
+                <!-- Success Message Box -->
+                <div id="success-box" class="hidden text-center py-12 space-y-4">
+                    <div class="w-16 h-16 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center mx-auto">
+                        <i data-lucide="check-circle" class="w-8 h-8"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-white">Pre-Order Successful!</h4>
+                    <p class="text-sm text-slate-400 max-w-md mx-auto">
+                        Thank you for reserving the Nexus X1 Pro. We have sent a confirmation receipt and shipping tracker to your email.
+                    </p>
+                    <button onclick="resetForm()" class="mt-4 px-6 py-2.5 rounded-full text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white transition-colors">
+                        Place Another Order
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-950 border-t border-slate-900 py-16 text-slate-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-emerald-500 to-cyan-400 flex items-center justify-center">
+                            <i data-lucide="smartphone" class="w-4 h-4 text-slate-950 font-bold"></i>
+                        </div>
+                        <span class="text-lg font-extrabold tracking-wider text-white">NEXUS X1</span>
+                    </div>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        Redefining mobile intelligence, titanium craft, and optical excellence.
+                    </p>
+                </div>
+
+                <div>
+                    <h5 class="text-xs font-bold uppercase tracking-widest text-white mb-4">Products</h5>
+                    <ul class="space-y-2.5 text-xs">
+                        <li><a href="#overview" class="hover:text-emerald-400 transition-colors">Nexus X1 Pro</a></li>
+                        <li><a href="#specs" class="hover:text-emerald-400 transition-colors">Nexus X1 Ultra</a></li>
+                        <li><a href="#interactive" class="hover:text-emerald-400 transition-colors">Nexus Pods Max</a></li>
+                        <li><a href="#overview" class="hover:text-emerald-400 transition-colors">Accessories</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-xs font-bold uppercase tracking-widest text-white mb-4">Support</h5>
+                    <ul class="space-y-2.5 text-xs">
+                        <li><a href="#" class="hover:text-emerald-400 transition-colors">Order Status</a></li>
+                        <li><a href="#" class="hover:text-emerald-400 transition-colors">Nexus Care+</a></li>
+                        <li><a href="#" class="hover:text-emerald-400 transition-colors">Returns & Refunds</a></li>
+                        <li><a href="#" class="hover:text-emerald-400 transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-xs font-bold uppercase tracking-widest text-white mb-4">Stay Connected</h5>
+                    <p class="text-xs text-slate-500 mb-4">Subscribe to get insider updates and early release drops.</p>
+                    <div class="flex items-center space-x-2">
+                        <input type="email" placeholder="Your email" class="bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-emerald-500 flex-grow">
+                        <button class="px-4 py-2 rounded-xl text-xs font-bold text-slate-950 bg-emerald-400 hover:bg-emerald-300 transition-colors">Join</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-slate-900/80 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-600">
+                <p>© 2026 Nexus Technologies Inc. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 sm:mt-0">
+                    <a href="#" class="hover:text-slate-400 transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-slate-400 transition-colors">Terms of Service</a>
+                    <a href="#" class="hover:text-slate-400 transition-colors">Sales Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Color selector interactive logic
+        function setColor(name, gradientClass, badgeBgClass, glowColor, btnElement) {
+            // Update buttons state
+            document.querySelectorAll('.color-btn').forEach(btn => {
+                btn.classList.remove('border-emerald-500', 'bg-slate-800/80');
+                btn.classList.add('border-slate-800', 'bg-slate-900/50');
+                const span = btn.querySelector('span:last-child');
+                span.className = 'text-xs font-semibold text-slate-500 group-hover:text-slate-300';
+                span.textContent = 'Select';
+            });
+
+            // Set active button
+            btnElement.classList.remove('border-slate-800', 'bg-slate-900/50');
+            btnElement.classList.add('border-emerald-500', 'bg-slate-800/80');
+            const activeSpan = btnElement.querySelector('span:last-child');
+            activeSpan.className = 'text-xs font-semibold text-emerald-400';
+            activeSpan.textContent = 'Selected';
+
+            // Update interactive device mockup
+            document.getElementById('device-color-name').textContent = name;
+            
+            const badge = document.getElementById('device-badge');
+            badge.className = `w-16 h-16 mx-auto rounded-2xl ${badgeBgClass} flex items-center justify-center text-slate-950 font-bold transition-all duration-500 shadow-lg`;
+
+            const wallpaper = document.getElementById('screen-wallpaper');
+            wallpaper.className = `w-20 h-20 mx-auto rounded-3xl bg-gradient-to-br ${gradientClass} flex items-center justify-center shadow-lg transition-colors duration-500`;
+
+            const glow = document.getElementById('interactive-glow');
+            glow.style.backgroundColor = glowColor;
+
+            // Update form dropdown selection
+            document.getElementById('form-color-select').value = name;
+        }
+
+        // Pre-order form submit handler
+        function handlePreorder(event) {
+            event.preventDefault();
+            document.getElementById('preorder-form').classList.add('hidden');
+            document.getElementById('success-box').classList.remove('hidden');
+            lucide.createIcons();
+        }
+
+        function resetForm() {
+            document.getElementById('preorder-form').reset();
+            document.getElementById('success-box').classList.add('hidden');
+            document.getElementById('preorder-form').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
