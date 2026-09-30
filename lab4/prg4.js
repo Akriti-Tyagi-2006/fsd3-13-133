@@ -14,7 +14,21 @@ app.get("/api/products",(req,res)=>{
       .status(200)
       .json({ count: modifiedProducts.length, data: modifiedProducts });
 });
+
+
+app.get("/api/products/:id",(req,res)=>{
+    const {id}=req.params;
+    const product=products.find((item)=>item.id===Number(id));//iterative approach
+    if(product){
+        res.status(200).json({status:true,data:product})
+    }
+    else{
+        res.status(404).json({status:false,msg:`product not found with id: ${id}`});
+    }
+
+    
+});
 app.use((req,res)=>{
     res.status(404).send("route not found");
 });
-app.listen(3333,()=>console.log("prg4 is running..."))
+app.listen(3333,()=>console.log("prg4 is running..."));
